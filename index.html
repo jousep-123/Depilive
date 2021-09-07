@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Depilive</title>
+    <link rel="stylesheet" href="estilo/style.css">
+    <script src="https://kit.fontawesome.com/79ae728b48.js" crossorigin="anonymous"></script>
+    <link rel="icon" href="img/logoDepilive.ico" 
+    type="image/x-icon">
+
+
+    <script>
+        function setCookie(cname,cvalue,exdays) {
+          const d = new Date();
+          d.setTime(d.getTime() + (exdays*24*60*60*1000));
+          let expires = "expires=" + d.toGMTString();
+          document.cookie = cname + "=" + cvalue + ";" + expires + ";path=/";
+        }
+        
+        function getCookie(cname) {
+          let name = cname + "=";
+          let decodedCookie = decodeURIComponent(document.cookie);
+          let ca = decodedCookie.split(';');
+          for(let i = 0; i < ca.length; i++) {
+            let c = ca[i];
+            while (c.charAt(0) == ' ') {
+              c = c.substring(1);
+            }
+            if (c.indexOf(name) == 0) {
+              return c.substring(name.length, c.length);
+            }
+          }
+          return "";
+        }
+        
+        function checkCookie() {
+          let user = getCookie("username");
+          if (user != "") {
+            alert("Bienvenido de nuevo " + user);
+          } else {
+             user = prompt("Por favor introduzca su nombre :","");
+             if (user != "" && user != null) {
+               setCookie("username", user, 30);
+             }
+          }
+        }
+        </script>
+
+
+    
+</head>
+<body  onload="checkCookie()">
+    
+    <header>
+        <img class="logo" src="img/logoDepilive.png" alt="Depilive">
+    <div class="contenedor-header"> 
+        <nav class="contenedor-nav">        
+           <ul>           
+            <li class="lista-nav"><a class="elemento-lista" href="index.html">Inicio</a></li>
+            <li class="lista-nav"><a class="elemento-lista" href="#servicios">Servicios</a></li>
+            <li class="lista-nav"><a class="elemento-lista" href="#contacto">Contacto</a></li>                                
+          </ul>
+        </nav>
+    </div>
+    </header>
+
+<main class="main">
+
+<div class="contenedor-main-uno">
+        <img class="belleza" src="img/bellezaMorena.jpg" alt="Belleza">
+    <dir class="texto-img">
+        <h1 id="texto-uno"> <strong>Trabajamos</strong> para tu salud y <strong>belleza</strong> </h1>
+        <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Fugit ipsum in aliquid nulla eius eaque quisquam.</p>
+    </dir>
+</div>
+
+<div class="contenedor-servicios">
+        <h2 id="servicios">Nuestros servicios</h2>
+        <p>Conoce nuestros servicios de limpieza facial, fotorejuvenecimiento facial y masaje corporales.</p>
+</div>
+
+<div id="contenedor-cajas">
+        <div class="caja-uno">
+            <img id="img-caja-uno" src="img/limpieza.jpg" alt="Limpieza facial">
+            <h3>Limpieza facial</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nostrum neque suscipit dolor magnam illum libero consectetur asperiores eligendi voluptatum.</p>
+            <button type="submit">Ver mas...</button>
+        </div>
+
+        <div class="caja-dos">
+            <img id="img-caja-dos" src="img/rejuvenecer.jpg" alt="Fotorejuvenecimiento facial">
+            <h3>Fotorejuvenecimiento facial</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nostrum neque suscipit dolor magnam illum libero consectetur asperiores eligendi voluptatum.</p>
+            <button type="submit">Ver mas...</button>
+        </div>
+
+        <div class="caja-tres">
+            <img id="img-caja-tres" src="img/masaje.jpg" alt="Masaje corporales">
+            <h3>Masaje corporales</h3>
+            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Earum nostrum neque suscipit dolor magnam illum libero consectetur asperiores eligendi voluptatum.</p>
+            <button type="submit">Ver mas...</button>
+        </div>
+</div>
+
+    </main>
+
+    <footer id="contacto">
+<div id="contenedor-foder">        
+        <div class="uno">
+            <h4>Depilive</h4>
+            <p id="p-">depilacion & estetica</p>
+            <p id="p-0">Depilive 2021 todos los derechos reservados.</p>
+        </div>
+
+        <div class="dos">
+            <h4>Nosotros</h4><br>
+            <a class="a-uno" href="#">¿Quienes somos?</a>
+            <a href="#">Contactanos</a>
+        </div>
+
+        <div class="tres">
+            <h4>Politicas</h4><br>
+            <a class="a-dos" href="#">Terminos y condiciones</a>
+            <a href="#">Politicas de provacidad</a>
+        </div>
+
+        <div class="cuatro">
+            <h4>Siguenos</h4><br>
+            <i class="fab fa-facebook"></i>
+            <i class="fab fa-instagram-square"></i>
+            <i class="fab fa-tiktok"></i>
+        </div>
+</div>
+    </footer>
+
+</body>
+</html>
